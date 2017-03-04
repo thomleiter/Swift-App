@@ -13,22 +13,14 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var theLabel: UILabel!
     
+    @IBOutlet weak var text1: UITextField!
+    
+    @IBOutlet weak var text2: UITextField!
+    
     var pushCount = 0
     
     @IBAction func buttonPushed(_ sender: UIButton) {
-        pushCount = pushCount + 1
-        print(pushCount)
-        if pushCount == 10 {
-            theLabel.text = "Button pushed 10X!"
-            self.view.backgroundColor = UIColor.red
-        }
-        if pushCount > 10 {
-            self.view.backgroundColor = UIColor.white
-        }
-        if pushCount == 20 {
-            theLabel.text = "You made it to 20X!!!"
-            self.view.backgroundColor = UIColor.green
-        }
+        theLabel.text = "Answer: \( Double(text1.text!)! + Double(text2.text!)!)"
     }
     
     override func viewDidLoad() {
